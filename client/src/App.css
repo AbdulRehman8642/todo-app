@@ -1,0 +1,574 @@
+/* FOR ALL */
+
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333333;
+}
+
+input {
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+textarea {
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+button {
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  transition: 100ms;
+  background-color: rgb(253, 219, 180);
+}
+
+/*  */
+/* SEPARATION */
+/* Parent.jsx */
+
+/* Navbar */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.navItemsParent {
+  display: flex;
+}
+
+.navItem {
+  margin: 10px;
+  border-radius: 25px;
+  padding: 12px 18px;
+  transition: 300ms;
+}
+
+.navItem:hover {
+  background-color: rgb(253, 219, 180);
+  cursor: pointer;
+}
+
+.allTaskNav {
+  background-color: rgba(253, 219, 180, 0.53);
+  cursor: pointer;
+}
+
+.compTaskNav {
+  background-color: rgba(253, 219, 180, 0.53);
+  cursor: pointer;
+}
+
+.remainTaskNav {
+  background-color: rgba(253, 219, 180, 0.53);
+  cursor: pointer;
+}
+
+.newTaskBtn {
+  padding: 10px;
+  outline: none;
+  border: none;
+  background-color: rgb(253, 219, 180);
+  border-radius: 12px;
+  display: flex;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.newTaskBtn:hover {
+  box-shadow: 1px 1px 20px 3px rgb(243, 226, 204);
+  cursor: pointer;
+}
+
+.plusIcon {
+  font-size: 15px;
+}
+
+/*  */
+/* SEPARATION */
+/* NewTaskPopop.jsx */
+
+/* Cross icon */
+
+.crossIconParent {
+  display: flex;
+  justify-content: right;
+}
+
+.crossIcon {
+  position: absolute;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 30px;
+  transition: 100ms;
+}
+
+.crossIcon:hover {
+  background-color: rgba(0, 0, 0, 0.081);
+}
+
+.handleParent {
+  position: fixed;
+  top: 0;
+  background-color: rgba(98, 95, 95, 0.21);
+  width: 100vw;
+  height: 100vh;
+  justify-items: center;
+  align-content: center;
+}
+
+.taskFormParent {
+  background-color: #fffafa;
+  padding: 30px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+  text-align: center;
+  transform: scale(1.2);
+}
+
+.createNewTaskBtnParent {
+  padding: 35px 0px 0px 0px;
+}
+
+.createNewTaskBtn {
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 100ms;
+  width: 100%;
+}
+
+.createNewTaskBtn:hover {
+  background-color: rgb(255, 194, 125);
+}
+
+.tDetailSeparation {
+  padding: 8px 0px;
+}
+
+/* input Fields */
+.inputFields {
+  border-radius: 30px;
+  padding: 4px 14px;
+  background-color: #fffafa;
+  width: 220px;
+  font-size: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.inputFields:focus {
+  box-shadow: 0 1px 3px rgba(255, 194, 125, 0.53);
+  background-color: rgba(255, 194, 125, 0.475);
+}
+
+/* Task Subject Input */
+/* while creating or updating */
+
+.subjectInp {
+  /* text-align: center; */
+  padding: 8px 14px;
+}
+
+.fieldHeading {
+  padding: 10px 0px;
+  font-size: 18px;
+}
+
+/* Task Description/textarea Input*/
+
+.descriptionTA {
+  max-width: 220px;
+  min-width: 220px;
+  height: 100px;
+  min-height: 100px;
+  max-height: 100px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  resize: none;
+}
+
+/* Task Due Date */
+
+.taskDueDate {
+  text-align: center;
+  padding: 8px 14px;
+}
+
+/*  */
+/* SEPARATION */
+/* Task Cards UI */
+
+.subjectParent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.taskSubj {
+  padding: 4px 0px;
+  cursor: pointer;
+  transition: 100ms;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.taskSubj:hover {
+  transform: scale(107%);
+}
+
+.taskDesc {
+  overflow: hidden;
+  height: 50px;
+  padding: 4px 0px;
+  color: rgba(51, 51, 51, 0.725);
+}
+
+.threeDotsIcon {
+  cursor: pointer;
+  transition: 100ms;
+  padding: 3px;
+}
+
+.threeDotsIcon:hover {
+  font-size: 20px;
+}
+
+.bodyParent {
+  display: flex;
+  padding: 15px;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.taskCardsParent {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 35px;
+  padding: 25px;
+}
+
+.task {
+  height: fit-content;
+  width: 280px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.2s ease;
+  background-color: #fff5e9;
+}
+
+.task:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.2s ease;
+}
+
+.dateParent {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 15px 0px 0px;
+}
+
+.dDDate {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.51);
+}
+
+.dDDateHeading {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.51);
+}
+
+.upDelBtnContainer {
+  display: flex;
+  gap: 5px;
+  padding: 10px 0px 0px;
+  align-items: center;
+}
+
+.upDelBtn {
+  padding: 7px 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 150ms;
+}
+
+.upDelBtn:hover {
+  box-shadow: 0px 2px 7px rgba(145, 83, 1, 0.446);
+}
+
+.compUpDelBtn {
+  background-color: rgb(156, 221, 148);
+}
+
+.compUpDelBtn:hover {
+  background-color: rgb(156, 221, 148);
+  box-shadow: 0px 2px 7px rgba(69, 126, 62, 0.539);
+}
+
+/* top Right Icons (check, cross */
+/* Check Icon */
+
+.topRightIcons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkIcon {
+  transition: 100ms;
+  color: green;
+  cursor: pointer;
+}
+
+.checkIcon:hover {
+  font-size: 20px;
+}
+
+.checkCircle {
+  font-size: 24px;
+}
+
+.checkCircle:hover {
+  font-size: 26px;
+}
+
+/* SEPARATION */
+/* TASK DELETION PROCESS UI */
+
+.taskDelConfirmBtnParent {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirm {
+  padding: 10px 14px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.deleteConfirmBtn {
+  background-color: rgb(244, 34, 34);
+  color: rgb(253, 219, 180);
+  font-weight: bolder;
+}
+
+.completedTask {
+  box-shadow: 0 4px 12px rgba(24, 210, 0, 0.439);
+  transition: box-shadow 0.2s ease;
+  /* background-color: rgba(113, 243, 96, 0.266); */
+  background-color: #d9fcd5;
+}
+
+.completedTask:hover {
+  box-shadow: 0 8px 24px rgba(24, 210, 0, 0.439);
+  transition: box-shadow 0.2s ease;
+}
+
+/* SEPARATION */
+/* Signup Signup Form */
+/* Signup Signup Form */
+
+.signupFieldParent {
+  padding: 10px;
+}
+
+.signupFields {
+  width: 280px;
+  height: 35px;
+  font-size: 18px;
+}
+
+.signupPageSignupBtnParent {
+  padding: 10px 0px;
+}
+
+.signupPageSignupBtn {
+  padding: 8px 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 100%;
+  transition: 100ms;
+}
+
+.signupPageSignupBtn:hover {
+  background-color: rgb(255, 194, 125);
+}
+
+.signupHeading {
+  padding: 18px 0px;
+}
+
+/* Separation */
+/* Separation */
+/* task card popup */
+.taskCard {
+  background-color: #fff5e9;
+  padding: 10px;
+  display: flex;
+  justify-content: left;
+}
+
+.taskOpenDetails {
+  padding: 0px 30px 10px 6px;
+  text-align: left;
+}
+
+.taskOpenSubjParent {
+  padding: 8px 16px;
+}
+
+.taskOpenSubj {
+  font-size: x-large;
+  width: 100%;
+}
+
+.taskOpenDescParent {
+  padding: 8px 16px;
+}
+
+.taskOpenDesc {
+  margin: 5px 0px 0px 0px;
+  padding: 5px;
+  box-shadow: 0px 1px 2px rgba(145, 83, 1, 0.2);
+  border-radius: 5px;
+  width: 100%;
+  height: 100px;
+  resize: none;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+.taskOpenDDateParent {
+  padding: 8px 16px;
+}
+
+.taskOpenDDate {
+  font-size: 14px;
+}
+
+.topRightIconsParent {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: right;
+  position: relative;
+  /* top: 20px; */
+}
+
+/* .topRightIcons {
+} */
+
+.TO_icon {
+  cursor: pointer;
+  padding: 6px;
+  font-size: 12px;
+  border-radius: 30px;
+  transition: 100ms;
+}
+
+.TO_icon:hover {
+  background-color: rgba(0, 0, 0, 0.081);
+}
+
+.TO_heading {
+  /* font-size: ; */
+  color: #747272;
+}
+
+/*  */
+/* Separation */
+/* Separation */
+/* ShowProfile ShowProfile */
+
+.profileParent {
+  position: absolute;
+  top: 70px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pfpItem {
+  padding: 18px 36px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 120ms;
+  cursor: pointer;
+  background-color: #fff5e9;
+}
+
+.pfpItemTop {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.pfpItemBottom {
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+
+.pfpItem:hover {
+  background-color: rgb(253, 219, 180);
+}
+
+.signUpBtnParent {
+  display: flex;
+  justify-content: center;
+}
+
+.signUpBtn {
+  display: flex;
+  gap: 5px;
+}
+
+.or{
+  padding: 6px;
+}
+
+.googleSignInParent {
+  padding: 10px 0px;
+}
+
+.googleSigninBtn {
+  border-radius: 20px;
+  padding: 8px;
+  width: 100%;
+  cursor: pointer;
+  transition: 100ms;
+}
+
+
+.googleSigninBtn:hover {
+  background-color: rgb(255, 194, 125);
+}
+
+.alreadyHaveAC{
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.signUp_in {
+  text-decoration: underline;
+  cursor: pointer;
+}
